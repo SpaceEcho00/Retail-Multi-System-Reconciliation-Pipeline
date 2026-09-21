@@ -4,7 +4,7 @@ A Python pipeline that reconciles data across five independent retail
 systems — POS, accounting, inventory, purchase orders, and cashier 
 shifts — to detect financial and operational discrepancies.
 
-## 🎯 Problem
+##  Problem
 
 Retailers run multiple disconnected systems. POS logs sales, accounting 
 records payments, inventory tracks stock, purchase orders track suppliers, 
@@ -33,20 +33,20 @@ From the included dataset:
 | Orphan Transactions | 0 | — |
 
 **Root causes identified:**
-- **TXN016 (missing payment):** Transaction was cancelled → no payment expected ✅
-- **TXN008 (amount mismatch):** Refund of $29.99 recorded as -$29.99 → sign convention issue ✅
+- **TXN016 (missing payment):** Transaction was cancelled → no payment expected 
+- **TXN008 (amount mismatch):** Refund of $29.99 recorded as -$29.99 → sign convention issue 
 - **TXN017 (status mismatch):** POS shows Completed, accounting shows Pending → **real concern: revenue recognized but cash not collected**
 - **PO004 (partial shipment):** Supplier short-shipped 2 units → explains inventory variance
 - **P007 (Smart Watch):** 0 on hand, 15 expected → stockout or loss
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 - **Python 3.12**
 - **pandas** — data manipulation, joins, groupby aggregation
 - **numpy** — numeric operations
 - **Jupyter** — interactive exploration
 
-## 🚀 How to Run
+##  How to Run
 
 ```bash
 git clone <your-repo>
