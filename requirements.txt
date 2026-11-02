@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+mysql-connector-python
+duckdb
+streamlit
+plotly
+pandas
+requests
+pydantic
