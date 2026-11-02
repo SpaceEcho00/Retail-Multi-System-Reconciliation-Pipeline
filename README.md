@@ -21,3 +21,24 @@ exceptions.
 | Repeat return on same item | Items returned more than once | 175+ |
 
 ## Architecture
+Maycee retail dataset (Parquet)
+│
+▼
+DuckDB (retail.duckdb)
+├── 6 clean model tables (dims + facts)
+└── 9 analysis tables
+│
+├──────────────┐
+▼ ▼
+Reconciliation FastAPI backend
+engine (Python) ├── 4 reconciliation endpoints (MySQL)
+│ └── 8 analytics endpoints (DuckDB)
+▼ │
+MySQL │
+├── reconciliation_task │
+├── reconciliation_audit │
+└── reconciliation_exception │
+│ │
+└──────────┬───────────┘
+▼
+Streamlit dashboard
